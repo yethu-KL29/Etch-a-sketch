@@ -98,8 +98,9 @@ let size = document.querySelector(".size")
 
 
 function changesize(input){
+  size.innerHTML =  `${input} x ${input}`
     makegrid(input);
-    size.innerHTML =  `${input} x ${input}`
+    
     
 }
 
