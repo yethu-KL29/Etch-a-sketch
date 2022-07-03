@@ -1,34 +1,121 @@
-body{
-    display: flex;
-    justify-content: center;
+ body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    
     background-image: url('images/imag.jpg');
     
 }
+.king{
+  display: flex;
+  justify-content: center;
+ 
+  
+}
+h1{
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+ 
+}
 
-.main{
-    margin-top: 200px;
+ .main{
+    display: grid;
+    margin-top: 100px;
     height:500px;
     width:500px;
     border: 10px solid rgb(255, 251, 251);
-    background-color: rgb(28, 87, 206);
+    background-image: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(255, 255, 255)); 
+
+
+     
+    
+ } 
+ 
+ 
+
+ .content{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    
-    
+    justify-content: space-around;
+    height:500px;
+    width:250px;
+    background-image: linear-gradient(to bottom right, rgb(30, 98, 188), rgb(131, 139, 205));
+    margin-top: 100px;
+    border: 10px solid rgb(255, 251, 251);
+   
+
 }
-.gridRow {
-    border: 1px solid rgb(151, 47, 47);
-    display: flex;
-    justify-content: space-between;
-    height: 30px;
+button{
+    height: 40px;
+    margin: 20px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 1000;
+    background-image: linear-gradient(to bottom right, rgb(94, 125, 193), rgba(122, 86, 205, 0.275));
 }
 
-.gridcol {
-    border: 1px solid black;
-    width: 30px;
+input[type='range'] {
+    -webkit-appearance: none;
+    background: transparent;
+    cursor: pointer;
+    border: 1px solid #000000;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border-radius: 30px;
+    width: 200px;
+    margin-left: 30px;
+    height: 20px;
+   
+    background-color: rgb(255, 255, 255);
+   
+    
+  }
+
+
+
+  input[type='color'] {
+    margin-left: 90px;
+    transform: scale(1.7);
+    background-color: rgb(255, 255, 255);
+    
+  
+}
+#colorpicker {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  border: none;
     
 }
-/* .gridcol:hover{
-    background-color: yellow;
-} */
+label{
+  margin-left: 60px;
+  font-size: 20px;
+  color: aliceblue;
+  font-weight: 800;
+}
+.head{
+display: flex;
+height: 100px;
+flex-direction: column;
+gap: 0;
+margin-top: 50px;
+justify-content: center;
+   }
+   p{
+    display: flex;
+    justify-content: center;
+    color:aliceblue;
+   }
+   h3{
+    display: flex;
+    justify-content: center;
+    color:aliceblue;
+   }
+   .size{
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+   }

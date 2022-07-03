@@ -1,35 +1,108 @@
-const main = document.querySelector('.main');
+let color;
+let c= "black";
+let click = true;
 
-// div.setAttribute('style', 'color: blue; background: red; height:500px; width:500px;');    
-let rows = document.getElementsByClassName("gridRow");
+let col = document.querySelectorAll('.squares');
+const picker = document.querySelector('#picker');
+let colormode = document.querySelector('.colormode');
+let clear = document.querySelector('.eraser');
+let random = document.querySelector('.rainbow');
+let reset = document.querySelector('.clear')
+
+// picker.addEventListener('onchange',function (e){
+//   color = e.target.value
+//  })
+ 
+function change(choice){
+colormode.addEventListener('click',function(e){
+  c =choice;
+  console.log(c)
+  colormode.style.backgroundColor = c;
+})
+
+}
 
 
-function makeRows(rownum) {
 
-let rows = document.querySelector("gridRow");
-    
-    for (r = 0; r < rownum; r++) {
-        let row = document.createElement("div");
-        main.appendChild(row).className = "gridRow";
-    };
-};
 
-makeRows(16)
-    function makeColumns(collnum) {
-        for (i = 0; i < 16; i++) {
-            for (j = 0; j < collnum; j++) {
-                let col = document.createElement("div");
-                rows[j].appendChild(col).className = "gridcol";
-            };
-    
-        };
-    };
-makeColumns(16);
 
-const col = document.querySelectorAll('.gridcol');
-col.forEach(col => {
-    col.addEventListener('click',function(e){
-        col.style.cssText = "background-color: black;"
+
+
+
+clear.addEventListener('click',function(e){
+  c = "white"
+  })
+
+
+
+random.addEventListener('click',function(e){
+  c = `hsl(${Math.random() * 360}, 100%, 50%)`;
+})
+
+
+reset.addEventListener('click',function(e){
+  let board  = document.querySelector(".main");
+    let squares = board.querySelectorAll("div");
+    squares.forEach((div) => div.style.backgroundColor = "white");
+})
+
+// let c = document.getElementById('colorpicker')
+
+function makegrid(size) {
+    let board  = document.querySelector(".main");
+    let squares = board.querySelectorAll("div");
+    squares.forEach((div) => div.remove());
+    board.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
+    board.style.gridTemplateRows = `repeat(${size} , 1fr)`;
+  
+    let amount = size * size;
+    for (let i = 0; i < amount; i++) {
+      let square = document.createElement("div");
+      square.classList.add("squares")
+      board.insertAdjacentElement("beforeend", square);
+    }
+     col = document.querySelectorAll('.squares');
+    col.forEach(col => { 
+     col.addEventListener('mouseover',function(e){
+
+      if(click){
+        console.log("click")
+        col.style.cssText =  `background-color : ${c}`
+      }
+      
     })
+    
 
 });
+
+  }
+
+
+    
+
+  document.querySelector('body').addEventListener('click',function(e){
+    click = !click
+  })
+
+
+
+  makegrid(16);
+
+
+  
+
+let size = document.querySelector(".size")
+
+    
+    
+
+
+function changesize(input){
+    makegrid(input);
+    size.innerHTML =  `${input} x ${input}`
+    
+}
+
+
+
+
