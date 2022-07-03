@@ -95,10 +95,10 @@ let size = document.querySelector(".size")
 
     
     
-
-
+let input = 16;
+size.innerHTML =  `${input} x ${input}`
 function changesize(input){
-  size.innerHTML =  `${input} x ${input}`
+   size.innerHTML =  `${input} x ${input}`
     makegrid(input);
     
     
